@@ -1,0 +1,32 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "gatsbybeta-20181220190954-authRole",
+			"UnauthRoleArn": "arn:aws:iam::109771542369:role/gatsbybeta-20181220190954-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::109771542369:role/gatsbybeta-20181220190954-authRole",
+			"Region": "eu-west-1",
+			"DeploymentBucketName": "gatsbybeta-20181220190954-deployment",
+			"UnauthRoleName": "gatsbybeta-20181220190954-unauthRole",
+			"StackName": "gatsbybeta-20181220190954",
+			"StackId": "arn:aws:cloudformation:eu-west-1:109771542369:stack/gatsbybeta-20181220190954/d4c9be60-048a-11e9-a2b3-500c3d3cda29"
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/gatsbybeta-20181220190954-deployment/amplify-cfn-templates/hosting/template.json",
+				"logicalId": "hostingS3AndCloudFront"
+			},
+			"lastPushTimeStamp": "2018-12-20T19:13:44.749Z",
+			"output": {
+				"S3BucketSecureURL": "https://heegeh-gatsby-v1.s3.amazonaws.com",
+				"WebsiteURL": "http://heegeh-gatsby-v1.s3-website-eu-west-1.amazonaws.com",
+				"Region": "eu-west-1",
+				"HostingBucketName": "heegeh-gatsby-v1"
+			},
+			"lastPushDirHash": "9seorR/PJU8t6AZpUbiN+C6vHPw="
+		}
+	}
+}
