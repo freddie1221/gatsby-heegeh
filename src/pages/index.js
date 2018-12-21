@@ -1,5 +1,6 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby" 
+// additional can import Link when the time comes
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
@@ -15,34 +16,34 @@ export default ({ data }) => {
             border-bottom: 1px solid;
           `}
         >
-          Testing
+          Posts
         </h1>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
+        <h4>{data.allUndefinedtrelloResponse.totalCount} Posts</h4>
+        {data.allUndefinedtrelloResponse.edges.map(({ node }) => (
           <div key={node.id}>
-            <Link
+            {/* <Link
               to={node.fields.slug}
               css={css`
                 text-decoration: none;
                 color: inherit;
               `}
-            >
+            > */}
               <h3
                 css={css`
                   margin-bottom: ${rhythm(1 / 4)};
                 `}
               >
-                {node.frontmatter.title}{" "}
-                <span
+                {node.name}{" "}
+                {/* <span
                   css={css`
                     color: #bbb;
                   `}
                 >
                   — {node.frontmatter.date}
-                </span>
+                </span> */}
               </h3>
-              <p>{node.excerpt}</p>
-            </Link>
+              <p>{node.desc}</p>
+            {/* </Link> */}
           </div>
         ))}
       </div>
@@ -51,23 +52,37 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
+
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC })
-     {
+    allUndefinedtrelloResponse {
       totalCount
       edges {
         node {
           id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-          }
-          fields {
-            slug
-          }
-          excerpt
+          name
+          desc
         }
       }
     }
   }
 `
+
+  // query {
+  //   allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC })
+  //    {
+  //     totalCount
+  //     edges {
+  //       node {
+  //         id
+  //         frontmatter {
+  //           title
+  //           date(formatString: "DD MMMM, YYYY")
+  //         }
+  //         fields {
+  //           slug
+  //         }
+  //         excerpt
+  //       }
+  //     }
+  //   }
+  // }
