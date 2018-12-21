@@ -35,6 +35,21 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
     },
-    'gatsby-plugin-offline'
-  ],
+    'gatsby-plugin-offline',
+  
+  
+    { 
+      resolve: 'gatsby-source-apiserver',
+      options: {
+        url: `https://api.trello.com/1/lists/598b7836aa7a8937cfd73260/cards?fields=id,name,desc&key=51c8d95afc906bf667ab0535ac782362&token=e0cf35475cd79f9a35d32ff1cc8b1cdf6a006875972e6672a3d395b0da8039e8`,
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        name: `trelloResponse`,
+      }
+    }
+  ]
 }
+    
+    
