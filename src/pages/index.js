@@ -54,17 +54,18 @@ export default ({ data }) => {
 export const query = graphql`
 
   query {
-    allUndefinedtrelloResponse {
-      totalCount
-      edges {
-        node {
-          id
-          name
-          desc
-        }
+    allUndefinedtrelloResponse  (sort: { fields: dateLastActivity, order: DESC }) {
+    totalCount
+    edges {
+      node {
+        id
+        name
+        desc
+        dateLastActivity
       }
     }
   }
+}
 `
 
   // query {
