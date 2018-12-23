@@ -16,8 +16,9 @@ exports.createPages = async ({ actions: { createPage } }) => {
   const cards = await getTrelloData()
   cards.forEach(card => {
     // something to put dashes between the spaces
+    let slug = card.name.toLowerCase().trim().split(/\s+/).join('-')
     createPage({
-      path: `/${card.name}`,
+      path: `/${slug}`,
       // make generic template component
       component: require.resolve('./src/templates/blog-post.js'),
       // don't yet understand what context does
