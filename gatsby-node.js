@@ -1,3 +1,4 @@
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -6,12 +7,11 @@ const fetch = require('isomorphic-fetch')
 const listId = process.env.GATSBY_LISTID
 const token = process.env.GATSBY_TOKEN
 const key = process.env.GATSBY_KEY
-
 const cardParameters = 'fields=id,name,desc'
+
 const url = `https://api.trello.com/1/lists/${listId}/cards?${cardParameters}&key=${key}&token=${token}`
 
-
-
+const getAttachments = (cardId) => fetch(`https://api.trello.com/1/${cardId}/attachments?key=${key}&token=${token}`)
 
 exports.createPages = ({ actions: { createPage } }) => {
   
@@ -31,6 +31,10 @@ exports.createPages = ({ actions: { createPage } }) => {
     
     // * Make individual pages
     cards.forEach(card => {
+      // * need to make another call to trello to retrieve each card's attachments
+      getAttachments
+// ? How am I going to make the attachments available to the card?
+// ? Maybe I make the call from the template?
         // something to put dashes between the spaces (could be refactored)
       let slug = card.name.toLowerCase().trim().split(/\s+/).join('-')
       createPage({
@@ -43,8 +47,4 @@ exports.createPages = ({ actions: { createPage } }) => {
   })
 }
 
-// ! is my promise not resolving?
 
-
-// * I want to use the name field to generate the slug.
-// * I think the below adds a field for each node called slug

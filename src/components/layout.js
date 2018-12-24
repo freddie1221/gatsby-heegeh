@@ -29,13 +29,16 @@ export default ({ children }) => (
             {data.site.siteMetadata.title}
           </h3>
         </Link>
-        <Link to={`/about/`} css={css`float: right;`}>
+        <Link to={`/about/`} css={css`float: right; `}>
           About
+        </Link>
+        <Link to={`/contribute/`} css={css`float: right; margin-right: ${rhythm(1)};`}>
+          Contribute
         </Link>
         {children}
         <Link to={`/`}>
           <h3 css={css`margin-top: ${rhythm(3)}; display: inline-block; font-style: normal;`}>
-            -- back
+          &larr;- back
           </h3>
         </Link>
       </div>
