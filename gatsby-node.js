@@ -18,6 +18,17 @@ exports.createPages = ({ actions: { createPage } }) => {
     return response.json()
   })
   .then(cards => { 
+    
+    // * Make index page
+
+    createPage({
+      path: `/testing`,
+      component: require.resolve('./src/templates/testing.js'),
+      context: { cards }
+    });
+    
+    
+    // * Make individual pages
     cards.forEach(card => {
         // something to put dashes between the spaces (could be refactored)
       let slug = card.name.toLowerCase().trim().split(/\s+/).join('-')

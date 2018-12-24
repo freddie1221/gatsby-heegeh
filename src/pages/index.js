@@ -19,6 +19,7 @@ export default ({ data }) => {
         <h4>{data.allUndefinedtrelloResponse.totalCount} Posts</h4>
         {data.allUndefinedtrelloResponse.edges.map(({ node }) => (
           // ? Why can't I write JS in here?
+          
           <div key={node.id}>
             <Link
               to={node.name}
@@ -49,9 +50,9 @@ export default ({ data }) => {
     </Layout>
   )
 }
+// ? I could change this to fetch. But I still don't know why I can't write JS in the JSX
 
 export const query = graphql`
-
   query {
     allUndefinedtrelloResponse  (sort: { fields: dateLastActivity, order: DESC }) {
     totalCount
