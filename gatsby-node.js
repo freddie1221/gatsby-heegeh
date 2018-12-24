@@ -45,6 +45,7 @@ exports.createPages = ({ actions: { createPage } }) => {
   })
 }
 
+// ! is my promise not resolving?
 
 
 // * I want to use the name field to generate the slug.
