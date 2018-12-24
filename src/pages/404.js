@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { Link } from "gatsby"
 import { css } from "@emotion/core"
 
-export default ({ data }) => (
+export default () => (
   <Layout>
     <h1>404 page not found</h1>
     <Link to={`/`}
