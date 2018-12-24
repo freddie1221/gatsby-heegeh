@@ -19,11 +19,10 @@ exports.createPages = ({ actions: { createPage } }) => {
   })
   .then(cards => { 
     cards.forEach(card => {
-        // something to put dashes between the spaces
+        // something to put dashes between the spaces (could be refactored)
       let slug = card.name.toLowerCase().trim().split(/\s+/).join('-')
       createPage({
         path: `/${slug}`,
-        // make generic template component
         component: require.resolve('./src/templates/blog-post.js'),
         // don't yet understand what context does
         context: { card }
