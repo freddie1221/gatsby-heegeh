@@ -5,7 +5,7 @@ import { css } from "@emotion/core"
 
 export default () => (
   <Layout>
-    <h1>404 page not found</h1>
+    <h1>This page has not been linked yet</h1>
     <Link to={`/`}
       css={css`
       text-decoration: none;
