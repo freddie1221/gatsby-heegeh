@@ -22,7 +22,7 @@ exports.createPages = ({ actions: { createPage } }) => {
   })
   .then(cards => { 
     
-    // * Make index page
+    // * Make index page 
 
     createPage({
       path: `/`,
