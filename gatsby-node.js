@@ -22,7 +22,7 @@ exports.createPages = ({ actions: { createPage } }) => {
     // * Make index page
 
     createPage({
-      path: `/testing`,
+      path: `/`,
       component: require.resolve('./src/templates/testing.js'),
       context: { cards }
     });
