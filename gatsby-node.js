@@ -1,9 +1,12 @@
-const axios = require('axios');
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 const fetch = require('isomorphic-fetch')
 
-const listId = '598b7836aa7a8937cfd73260'
-const token = 'e0cf35475cd79f9a35d32ff1cc8b1cdf6a006875972e6672a3d395b0da8039e8'
-const key = '51c8d95afc906bf667ab0535ac782362'
+const listId = process.env.GATSBY_LISTID
+const token = process.env.GATSBY_TOKEN
+const key = process.env.GATSBY_KEY
+
 const cardParameters = 'fields=id,name,desc'
 const url = `https://api.trello.com/1/lists/${listId}/cards?${cardParameters}&key=${key}&token=${token}`
 
