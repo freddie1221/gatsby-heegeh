@@ -23,13 +23,11 @@ exports.createPages = ({ actions: { createPage } }) => {
   .then(cards => { 
     
     // * Make index page 
-
     createPage({
       path: `/`,
       component: require.resolve('./src/templates/testing.js'),
       context: { cards }
     });
-    
     
     // * Make individual pages
     cards.forEach(card => {
@@ -38,7 +36,7 @@ exports.createPages = ({ actions: { createPage } }) => {
       createPage({
         path: `/${slug}`,
         component: require.resolve('./src/templates/blog-post.js'),
-        // don't yet understand what context does
+        // I the object assigned to context is passed into the component as its argument
         context: { card }
       })
     });
