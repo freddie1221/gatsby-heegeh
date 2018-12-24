@@ -29,10 +29,10 @@ export default ({ children }) => (
             {data.site.siteMetadata.title}
           </h3>
         </Link>
-        <Link to={`/about/`} css={css`float: right; `}>
+        <Link to={`/about/`} css={css`float: right; text-decoration: none; color: inherit;`}>
           About
         </Link>
-        <Link to={`/contribute/`} css={css`float: right; margin-right: ${rhythm(1)};`}>
+        <Link to={`/contribute/`} css={css`float: right; margin-right: ${rhythm(1)}; text-decoration: none; color: inherit;`}>
           Contribute
         </Link>
         {children}
