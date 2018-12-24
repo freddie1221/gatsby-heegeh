@@ -1,6 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby" 
-// additional can import Link when the time comes
+import { Link, graphql } from "gatsby" 
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
@@ -20,14 +19,15 @@ export default ({ data }) => {
         </h1>
         <h4>{data.allUndefinedtrelloResponse.totalCount} Posts</h4>
         {data.allUndefinedtrelloResponse.edges.map(({ node }) => (
+          // ? Why can't I write JS in here?
           <div key={node.id}>
-            {/* <Link
-              to={node.fields.slug}
+            <Link
+              to={node.name}
               css={css`
                 text-decoration: none;
                 color: inherit;
               `}
-            > */}
+            >
               <h3
                 css={css`
                   margin-bottom: ${rhythm(1 / 4)};
@@ -43,7 +43,7 @@ export default ({ data }) => {
                 </span> */}
               </h3>
               <p>{node.desc}</p>
-            {/* </Link> */}
+            </Link>
           </div>
         ))}
       </div>
@@ -67,23 +67,3 @@ export const query = graphql`
   }
 }
 `
-
-  // query {
-  //   allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC })
-  //    {
-  //     totalCount
-  //     edges {
-  //       node {
-  //         id
-  //         frontmatter {
-  //           title
-  //           date(formatString: "DD MMMM, YYYY")
-  //         }
-  //         fields {
-  //           slug
-  //         }
-  //         excerpt
-  //       }
-  //     }
-  //   }
-  // }
