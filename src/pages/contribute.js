@@ -40,12 +40,14 @@ class Contribute extends React.Component {
           <input
             type="text"
             name="name"
+            placeholder="Title"
             value={this.state.name}
             onChange={this.handleInputChange}
           />
           <Textarea
             type="text"
             name="description"
+            placeholder="Description"
             value={this.state.description}
             onChange={this.handleInputChange}
           />
