@@ -4,36 +4,52 @@ import Textarea from 'react-textarea-autosize'
 
 
 class Contribute extends React.Component {
-
-  constructor(props){
-    super(props)
-    this.state = {title: ""}
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  state = {
+    name: "",
+    description: "",
   }
 
-  handleChange(e) {
-    this.setState({value: e.target.title});
+  handleInputChange = event => {
+    const target = event.target
+    const value = target.value
+    const name = target.name
+// ? Not too sure what target does / is needed for
+    this.setState({
+      [name]: value,
+    })
   }
 
-  handleSubmit(e) {
-    alert('A name was submitted: ' + this.state.title);
-    e.preventDefault();
+
+  handleSubmit = event => {
+    event.preventDefault()
+    const listId = process.env.GATSBY_LISTID
+    const token = process.env.GATSBY_TOKEN
+    const key = process.env.GATSBY_KEY
+    const desc = this.state.description
+    const name = this.state.name
+    const path = `https://api.trello.com/1/cards?`
+    const url = `${path}name=${name}&desc=${desc}&idList=${listId}&key=${key}&token=${token}`
+    
+    fetch(url, { method: "POST" })
   }
 
   render() {
     return (
       <Layout>
-        <h1>Contribute</h1>
-        <p>Add your contribution for review{}</p>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" value="" onChange={this.handleChange} />
-          <br/><br/>
-          <Textarea 
-            placeholder="Description"
-          /><br/><br/>
-          <input type="submit" value="Submit" />
-          
+          <input
+            type="text"
+            name="name"
+            value={this.state.name}
+            onChange={this.handleInputChange}
+          />
+          <Textarea
+            type="text"
+            name="description"
+            value={this.state.description}
+            onChange={this.handleInputChange}
+          />
+          <button type="submit">Submit</button>
         </form>
       </Layout>
     )
