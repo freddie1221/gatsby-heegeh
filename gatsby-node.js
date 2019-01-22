@@ -40,7 +40,7 @@ exports.createPages = ({ actions: { createPage } }) => {
       createPage({
         path: `/${slug}`,
         component: require.resolve('./src/templates/blog-post.js'),
-        // I the object assigned to context is passed into the component as its argument
+        // I think the object assigned to context is passed into the component as its argument
         context: { card }
       })
     });
