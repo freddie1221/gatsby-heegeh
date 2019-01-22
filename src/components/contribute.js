@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/layout"
 import Textarea from 'react-textarea-autosize'
 
 
@@ -22,7 +21,7 @@ class Contribute extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    const listId = process.env.GATSBY_LISTID
+    const listId = process.env.GATSBY_INBOX_LISTID
     const token = process.env.GATSBY_TOKEN
     const key = process.env.GATSBY_KEY
     const desc = this.state.description
@@ -35,7 +34,6 @@ class Contribute extends React.Component {
 
   render() {
     return (
-      <Layout>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -53,7 +51,6 @@ class Contribute extends React.Component {
           />
           <button type="submit">Submit</button>
         </form>
-      </Layout>
     )
   }
 }

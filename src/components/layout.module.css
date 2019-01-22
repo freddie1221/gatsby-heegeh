@@ -1,0 +1,19 @@
+.general {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 40px;
+  padding-top: 30px;
+}
+
+.header {
+  margin-bottom: 40px; 
+  display: inline-block; 
+  font-style: normal;
+  text-decoration: none;
+}
+
+.nav {
+  float: right; 
+  text-decoration: none; 
+  color: inherit;
+}

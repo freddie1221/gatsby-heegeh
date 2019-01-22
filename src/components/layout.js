@@ -1,6 +1,7 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { StaticQuery, Link, graphql } from "gatsby"
+import styles from "./layout.module.css"
 
 import { rhythm } from "../utils/typography"
 
@@ -16,25 +17,22 @@ export default ({ children }) => (
       }
     `}
     render={data => (
-      <div
-        css={css`
-          margin: 0 auto;
-          max-width: 700px;
-          padding: ${rhythm(2)};
-          padding-top: ${rhythm(1.5)};
-        `}
-      >
+      <div className={styles.general}>
         <Link to={`/`}>
-          <h3 css={css`margin-bottom: ${rhythm(2)}; display: inline-block; font-style: normal;`}>
+          <h3 className={styles.header}>
             {data.site.siteMetadata.title}
           </h3>
         </Link>
-        <Link to={`/about/`} css={css`float: right; text-decoration: none; color: inherit;`}>
-          About
-        </Link>
-        <Link to={`/contribute/`} css={css`float: right; margin-right: ${rhythm(1)}; text-decoration: none; color: inherit;`}>
-          Contribute
-        </Link>
+        <span>
+          <Link to={`/about/`} css={css`float: right; text-decoration: none; color: inherit;`}>
+          {/* Interesting how I can't currently get the CSS module to behave correctly */}
+            About
+          </Link>
+          <Link to={`/contribute-page/`} css={css`float: right; margin-right: ${rhythm(1)}; text-decoration: none; color: inherit;`}>
+            Contribute
+          </Link>
+        </span>
+
         {children}
         <Link to={`/`}>
           <h3 css={css`margin-top: ${rhythm(3)}; display: inline-block; font-style: normal;`}>
