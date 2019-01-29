@@ -1,34 +1,40 @@
 import React from "react"
-import { css } from "@emotion/core"
-import { StaticQuery, Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import styles from "./layout.module.css"
+// import { css } from "@emotion/core"
+// import { rhythm } from "../utils/typography"
 
-import { rhythm } from "../utils/typography"
+function Layout({children}) {
+  return(
 
-export default ({ children }) => (
-  <StaticQuery
-    query={graphql`query { site { siteMetadata { title } } } `}
-    
-    render={data => (
-      <div className={styles.general}>
-        <Link to={`/`}>
-          <h3 className={styles.header}>
-            {data.site.siteMetadata.title}
-          </h3>
-        </Link>
-          <Link to={`/about/`} css={css`float: right; text-decoration: none; color: inherit;`}>
-            About
+    <div className={styles.general}>
+      <header>
+        <div className={styles.logo}>
+          <Link to={`/`}>
+            <h3>
+              Recos
+            </h3>
           </Link>
-          <Link to={`/contribute-page/`} css={css`float: right; margin-right: ${rhythm(1)}; text-decoration: none; color: inherit;`}>
-            Contribute
+        </div>
+        <div className={styles.nav}>
+          <Link to={`/contribute-page/`}>
+            <h4>Contribute</h4>
           </Link>
-        {children}
+          <Link to={`/about/`}>
+            <h4>About</h4>
+          </Link>
+        </div>
+      </header>
+      {children}
+      <div className={styles.footer}>
         <Link to={`/`}>
-          <h3 css={css`margin-top: ${rhythm(3)}; display: inline-block; font-style: normal;`}>
+          <h3>
           &larr; back
           </h3>
         </Link>
       </div>
-    )}
-  />
-)
+    </div>
+  )
+}
+
+export default Layout
