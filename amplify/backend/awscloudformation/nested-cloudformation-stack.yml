@@ -81,7 +81,7 @@
 		"hostingS3AndCloudFront": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/gatsbybeta-20181220190954-deployment/amplify-cfn-templates/hosting/template.json",
+				"TemplateURL": "https://s3.amazonaws.com/gatsbyheegeh-20190129085804-deployment/amplify-cfn-templates/hosting/template.json",
 				"Parameters": {}
 			}
 		}

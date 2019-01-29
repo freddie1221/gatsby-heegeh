@@ -1,14 +1,14 @@
 {
     "providers": {
         "awscloudformation": {
-            "AuthRoleName": "gatsbybeta-20181220190954-authRole",
-            "UnauthRoleArn": "arn:aws:iam::109771542369:role/gatsbybeta-20181220190954-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::109771542369:role/gatsbybeta-20181220190954-authRole",
+            "AuthRoleName": "gatsbyheegeh-20190129085804-authRole",
+            "UnauthRoleArn": "arn:aws:iam::109771542369:role/gatsbyheegeh-20190129085804-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::109771542369:role/gatsbyheegeh-20190129085804-authRole",
             "Region": "eu-west-1",
-            "DeploymentBucketName": "gatsbybeta-20181220190954-deployment",
-            "UnauthRoleName": "gatsbybeta-20181220190954-unauthRole",
-            "StackName": "gatsbybeta-20181220190954",
-            "StackId": "arn:aws:cloudformation:eu-west-1:109771542369:stack/gatsbybeta-20181220190954/d4c9be60-048a-11e9-a2b3-500c3d3cda29"
+            "DeploymentBucketName": "gatsbyheegeh-20190129085804-deployment",
+            "UnauthRoleName": "gatsbyheegeh-20190129085804-unauthRole",
+            "StackName": "gatsbyheegeh-20190129085804",
+            "StackId": "arn:aws:cloudformation:eu-west-1:109771542369:stack/gatsbyheegeh-20190129085804/fd552d50-23a3-11e9-b5c1-06fd3e47f290"
         }
     }
 }
